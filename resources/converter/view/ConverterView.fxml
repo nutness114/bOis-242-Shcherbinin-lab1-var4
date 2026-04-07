@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" prefHeight="520.0" prefWidth="720.0" spacing="14.0"
+      xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="converter.controller.ConverterController">
+    <padding>
+        <Insets bottom="18.0" left="18.0" right="18.0" top="18.0"/>
+    </padding>
+
+    <Label style="-fx-font-size: 22px; -fx-font-weight: bold;" text="Конвертер валют, криптовалют и металлов"/>
+    <Label style="-fx-text-fill: #555555;" text="Архитектура MVC: Model + View(FXML) + Controller"/>
+
+    <HBox spacing="10.0">
+        <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+            <Label text="Введите значение"/>
+            <TextField fx:id="valueField" promptText="Например: 125.75"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10.0">
+        <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+            <Label text="Из"/>
+            <ComboBox fx:id="fromComboBox" maxWidth="1.7976931348623157E308"/>
+        </VBox>
+        <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+            <Label text="В"/>
+            <ComboBox fx:id="toComboBox" maxWidth="1.7976931348623157E308"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10.0">
+        <Button mnemonicParsing="false" onAction="#handleConvert" text="Конвертировать"/>
+        <Button mnemonicParsing="false" onAction="#handleRefreshRates" text="Обновить курсы"/>
+    </HBox>
+
+    <VBox spacing="6.0">
+        <Label text="Результат"/>
+        <Label fx:id="resultLabel" style="-fx-font-size: 18px; -fx-text-fill: #0d47a1;" text="Результат появится здесь"/>
+        <Label fx:id="statusLabel" style="-fx-text-fill: #b71c1c;" text="Введите данные и нажмите кнопку"/>
+    </VBox>
+
+    <VBox spacing="6.0" VBox.vgrow="ALWAYS">
+        <Label text="История конвертаций"/>
+        <ListView fx:id="historyListView" prefHeight="220.0" VBox.vgrow="ALWAYS"/>
+    </VBox>
+
+    <Label style="-fx-text-fill: #666666;" text="Поддерживаемые единицы: USD, EUR, RUB, BTC, ETH, XAU, XAG"/>
+</VBox>
