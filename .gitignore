@@ -3,3 +3,5 @@ out-manual/
 .m2repo/
 target/
 *.class
+.idea/
+.gigaide/
