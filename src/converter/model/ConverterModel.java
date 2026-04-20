@@ -60,19 +60,19 @@ public class ConverterModel {
 
     public List<String> getUnitDescriptions() {
         return Arrays.asList(
-                "USD - доллар США",
-                "EUR - евро",
-                "RUB - российский рубль",
+                "USD - US dollar",
+                "EUR - euro",
+                "RUB - Russian ruble",
                 "BTC - Bitcoin",
                 "ETH - Ethereum",
-                "XAU - золото (тройская унция)",
-                "XAG - серебро (тройская унция)"
+                "XAU - gold (troy ounce)",
+                "XAG - silver (troy ounce)"
         );
     }
 
     private void validateUnit(String unit) {
         if (!ratesToUsd.containsKey(unit)) {
-            throw new IllegalArgumentException("Неизвестная единица: " + unit);
+            throw new IllegalArgumentException("Unknown unit: " + unit);
         }
     }
 

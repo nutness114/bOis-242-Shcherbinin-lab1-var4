@@ -17,42 +17,42 @@
         <Insets bottom="18.0" left="18.0" right="18.0" top="18.0"/>
     </padding>
 
-    <Label style="-fx-font-size: 22px; -fx-font-weight: bold;" text="Конвертер валют, криптовалют и металлов"/>
-    <Label style="-fx-text-fill: #555555;" text="Архитектура MVC: Model + View(FXML) + Controller"/>
+    <Label style="-fx-font-size: 22px; -fx-font-weight: bold;" text="Currency, Crypto and Metal Converter"/>
+    <Label style="-fx-text-fill: #555555;" text="MVC architecture: Model + View (FXML) + Controller"/>
 
     <HBox spacing="10.0">
         <VBox spacing="6.0" HBox.hgrow="ALWAYS">
-            <Label text="Введите значение"/>
-            <TextField fx:id="valueField" promptText="Например: 125.75"/>
+            <Label text="Enter value"/>
+            <TextField fx:id="valueField" promptText="For example: 125.75"/>
         </VBox>
     </HBox>
 
     <HBox spacing="10.0">
         <VBox spacing="6.0" HBox.hgrow="ALWAYS">
-            <Label text="Из"/>
+            <Label text="From"/>
             <ComboBox fx:id="fromComboBox" maxWidth="1.7976931348623157E308"/>
         </VBox>
         <VBox spacing="6.0" HBox.hgrow="ALWAYS">
-            <Label text="В"/>
+            <Label text="To"/>
             <ComboBox fx:id="toComboBox" maxWidth="1.7976931348623157E308"/>
         </VBox>
     </HBox>
 
     <HBox spacing="10.0">
-        <Button mnemonicParsing="false" onAction="#handleConvert" text="Конвертировать"/>
-        <Button mnemonicParsing="false" onAction="#handleRefreshRates" text="Обновить курсы"/>
+        <Button mnemonicParsing="false" onAction="#handleConvert" text="Convert"/>
+        <Button mnemonicParsing="false" onAction="#handleRefreshRates" text="Refresh rates"/>
     </HBox>
 
     <VBox spacing="6.0">
-        <Label text="Результат"/>
-        <Label fx:id="resultLabel" style="-fx-font-size: 18px; -fx-text-fill: #0d47a1;" text="Результат появится здесь"/>
-        <Label fx:id="statusLabel" style="-fx-text-fill: #b71c1c;" text="Введите данные и нажмите кнопку"/>
+        <Label text="Result"/>
+        <Label fx:id="resultLabel" style="-fx-font-size: 18px; -fx-text-fill: #0d47a1;" text="The result will appear here"/>
+        <Label fx:id="statusLabel" style="-fx-text-fill: #b71c1c;" text="Enter data and click the button"/>
     </VBox>
 
     <VBox spacing="6.0" VBox.vgrow="ALWAYS">
-        <Label text="История конвертаций"/>
+        <Label text="Conversion history"/>
         <ListView fx:id="historyListView" prefHeight="220.0" VBox.vgrow="ALWAYS"/>
     </VBox>
 
-    <Label style="-fx-text-fill: #666666;" text="Поддерживаемые единицы: USD, EUR, RUB, BTC, ETH, XAU, XAG"/>
+    <Label style="-fx-text-fill: #666666;" text="Supported units: USD, EUR, RUB, BTC, ETH, XAU, XAG"/>
 </VBox>

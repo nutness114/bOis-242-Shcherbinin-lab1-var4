@@ -1,25 +1,22 @@
 # JavaFX MVC Converter
 
-Учебный проект по JavaFX с архитектурой MVC.
+Учебный проект на JavaFX по архитектуре MVC.
 
-Что реализовано:
-- `ConverterModel` с логикой конвертации и коэффициентами.
-- `ConverterController` с обработкой кнопок, валидацией и историей.
-- `ConverterView.fxml` с графическим интерфейсом.
-- `InputValidator` с несколькими проверками ввода.
-- `RateProvider` для загрузки курсов из API с безопасным локальным фолбэком.
+Что есть в проекте:
+- `pom.xml` для Maven-сборки
+- `src/` с Java-кодом
+- `resources/` с `FXML`
+- поддержка `USD`, `EUR`, `RUB`, `BTC`, `ETH`, `XAU`, `XAG`
+- валидация ввода и история конвертаций
 
-Структура:
-- `src/converter/Main.java`
-- `src/converter/model/ConverterModel.java`
-- `src/converter/controller/ConverterController.java`
-- `src/converter/service/RateProvider.java`
-- `src/converter/util/InputValidator.java`
-- `src/converter/view/ConverterView.fxml`
+Запуск вручную:
+1. Скомпилировать:
+   `D:\GigaIde\jbr\bin\javac.exe --release 8 -cp "C:\Program Files\Java\jre1.8.0_51\lib\ext\jfxrt.jar" -d out-manual ...`
+2. Скопировать `resources/converter/view/ConverterView.fxml` в `out-manual/converter/view/`
+3. Запустить:
+   `C:\Program Files\Java\jre1.8.0_51\bin\java.exe -cp out-manual converter.Main`
 
-Запуск в IDE:
-1. Откройте папку проекта.
-2. Убедитесь, что используется JDK 8 с JavaFX.
-3. Запустите класс `converter.Main`.
-
-Для проверки модели отдельно можно запустить `converter.model.ConverterModel`.
+Maven:
+- `pom.xml` добавлен и настроен под текущую структуру папок.
+- На этой машине Maven сейчас блокируется SSL-ошибкой при догрузке стандартных плагинов из `repo.maven.apache.org`.
+- Сам код рабочий и вручную запускается.

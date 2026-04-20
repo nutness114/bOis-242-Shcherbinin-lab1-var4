@@ -65,7 +65,7 @@ public class ConverterController implements Initializable {
         }
 
         historyListView.setItems(FXCollections.observableArrayList(historyItems));
-        statusLabel.setText("Курсы загружены. При недоступности API используются встроенные значения.");
+        statusLabel.setText("Rates loaded. If API is unavailable, built-in values are used.");
     }
 
     @FXML
@@ -73,27 +73,27 @@ public class ConverterController implements Initializable {
         String input = valueField.getText();
 
         if (InputValidator.isEmpty(input)) {
-            showError("Введите значение для конвертации.");
+            showError("Enter a value to convert.");
             return;
         }
 
         if (!InputValidator.isNumeric(input)) {
-            showError("Введите корректное число. Допустимы дробные значения.");
+            showError("Enter a valid number. Decimal values are allowed.");
             return;
         }
 
         if (!InputValidator.isPositive(input)) {
-            showError("Число должно быть больше нуля.");
+            showError("The number must be greater than zero.");
             return;
         }
 
         if (!InputValidator.isWithinMax(input, MAX_INPUT_VALUE)) {
-            showError("Число слишком большое. Максимум: " + formatter.format(MAX_INPUT_VALUE));
+            showError("The number is too large. Maximum: " + formatter.format(MAX_INPUT_VALUE));
             return;
         }
 
         if (fromComboBox.getValue() == null || toComboBox.getValue() == null) {
-            showError("Выберите единицы измерения.");
+            showError("Select conversion units.");
             return;
         }
 
@@ -103,18 +103,18 @@ public class ConverterController implements Initializable {
                 + " = " + formatter.format(convertedValue) + " " + toComboBox.getValue();
 
         resultLabel.setText(message);
-        statusLabel.setText("Конвертация выполнена успешно.");
+        statusLabel.setText("Conversion completed successfully.");
         addToHistory(message);
     }
 
     @FXML
     private void handleRefreshRates(ActionEvent event) {
         model.refreshRates();
-        statusLabel.setText("Курсы обновлены или восстановлены из локальных значений.");
+        statusLabel.setText("Rates refreshed or restored from local defaults.");
     }
 
     private void showError(String message) {
-        resultLabel.setText("Ошибка");
+        resultLabel.setText("Error");
         statusLabel.setText(message);
     }
 

@@ -13,7 +13,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/converter/view/ConverterView.fxml"));
 
         Scene scene = new Scene(root, 720, 520);
-        primaryStage.setTitle("MVC Конвертер единиц");
+        primaryStage.setTitle("MVC Converter");
         primaryStage.setScene(scene);
         primaryStage.setMinWidth(640);
         primaryStage.setMinHeight(480);
